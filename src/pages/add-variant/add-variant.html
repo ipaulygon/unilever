@@ -1,0 +1,73 @@
+<!--
+  Generated template for the AddVariantPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Variant</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="variantForm">
+    <ion-item>
+      <ion-label floating>Content</ion-label>
+      <ion-input formControlName="content" type="text"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.content">
+      <div style="text-align:center" *ngFor="let errors of formErrors.content">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Size</ion-label>
+      <ion-input formControlName="size" type="number"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.size">
+      <div style="text-align:center" *ngFor="let errors of formErrors.size">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Sugar</ion-label>
+      <ion-input formControlName="sugar" type="number"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.sugar">
+      <div style="text-align:center" *ngFor="let errors of formErrors.sugar">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Saturated Fat</ion-label>
+      <ion-input formControlName="saturated_fat" type="number"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.saturated_fat">
+      <div style="text-align:center" *ngFor="let errors of formErrors.saturated_fat">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Trans Fatty Acid</ion-label>
+      <ion-input formControlName="trans_fatty_acid" type="number"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.trans_fatty_acid">
+      <div style="text-align:center" *ngFor="let errors of formErrors.trans_fatty_acid">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Sodium</ion-label>
+      <ion-input formControlName="sodium" type="number"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.sodium">
+      <div style="text-align:center" *ngFor="let errors of formErrors.sodium">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+  </form>
+  <div padding>
+    <button (click)="save()" color="dark" outline ion-button round block>Save</button>
+  </div>
+</ion-content>

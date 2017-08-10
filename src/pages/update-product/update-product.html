@@ -1,0 +1,38 @@
+<!--
+  Generated template for the UpdateProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Update Product</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="productForm">
+    <ion-item>
+      <ion-label floating>Brand</ion-label>
+      <ion-input formControlName="brand" type="text"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.brand">
+      <div style="text-align:center" *ngFor="let errors of formErrors.brand">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Product</ion-label>
+      <ion-input formControlName="product" type="text"></ion-input>
+    </ion-item>
+    <div *ngIf="formErrors.product">
+      <div style="text-align:center" *ngFor="let errors of formErrors.product">
+        <p style="color: #C33825;font-style:italic;">{{errors}}<p>
+      </div>
+    </div>
+  </form>
+  <div padding>
+    <button (click)="save()" color="dark" outline ion-button round block>Update</button>
+  </div>
+</ion-content>
