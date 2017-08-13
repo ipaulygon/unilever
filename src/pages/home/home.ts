@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { ProductsProvider } from '../../providers/products/products';
 import { AddProductPage } from '../add-product/add-product';
 import { ViewProductPage } from '../view-product/view-product';
@@ -14,7 +14,11 @@ export class HomePage {
   products: any;
   items: any;
 
-  constructor(public navCtrl: NavController, public productsService: ProductsProvider) {
+  constructor(public navCtrl: NavController, public productsService: ProductsProvider, public alertCtrl: AlertController) {
+    this.init();
+  }
+
+  init(){
     this.productsService.getProducts().subscribe((products) => {
         this.products = products;
         this.items = products;
@@ -39,6 +43,26 @@ export class HomePage {
     this.navCtrl.push(UpdateProductPage, {
         product: product
     });
+  }
+
+  deleteProduct(product){
+    let alert = this.alertCtrl.create({
+      title: 'Warning!',
+      message: 'Are you sure you want to delete this data?',
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Delete',
+          handler: data => {
+            this.productsService.deleteProduct(product);
+            this.init();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   getItems(ev: any) {

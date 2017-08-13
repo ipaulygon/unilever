@@ -1,8 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import PouchDB from 'pouchdb';
 import 'rxjs/add/observable/from';
 import { DataProvider } from '../data/data';
 import { Subject } from 'rxjs/Subject';
@@ -34,6 +32,10 @@ export class ProductsProvider {
 
   addProduct(product): void {
       this.dataService.db.put(product);
+  }
+
+  deleteProduct(product): void{
+      this.dataService.db.remove(product);
   }
  
   emitproducts(): void {

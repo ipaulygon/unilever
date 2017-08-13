@@ -62,7 +62,7 @@ export class AddProductPage {
   save(){
     // Generate computed fields
     if(this.productForm.valid){
-      this.productForm.value._id = this.productForm.value.product.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+      this.productForm.value._id = this.productForm.value.brand.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')+'_'+this.productForm.value.product.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
       this.productForm.value.datePublished = new Date().toISOString();
       this.productForm.value.dateUpdated = new Date().toISOString();
       this.productService.addProduct(this.productForm.value);

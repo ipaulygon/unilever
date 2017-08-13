@@ -14,7 +14,7 @@
 <ion-content padding>
   <form [formGroup]="productForm">
     <ion-item>
-      <ion-label floating>Brand</ion-label>
+      <ion-label floating>Brand<span>*</span></ion-label>
       <ion-input formControlName="brand" type="text"></ion-input>
     </ion-item>
     <div *ngIf="formErrors.brand">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <ion-item>
-      <ion-label floating>Product</ion-label>
+      <ion-label floating>Product<span>*</span></ion-label>
       <ion-input formControlName="product" type="text"></ion-input>
     </ion-item>
     <div *ngIf="formErrors.product">

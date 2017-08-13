@@ -34,6 +34,10 @@ export class VariantsProvider {
   addVariant(variant): void {
     this.dataService.db.post(variant);
   }
+
+  deleteVariant(variant): void{
+      this.dataService.db.remove(variant);
+  }
  
   emitVariants(productId): void {
     this.zone.run(() => {

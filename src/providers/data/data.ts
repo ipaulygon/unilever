@@ -15,7 +15,7 @@ export class DataProvider {
   db: any;
   remote: string = 'http://localhost:5984/unilever_sell';
 
-  constructor(public http: Http) {
+  constructor() {
     this.db = new PouchDB('unilever_sell');
     let options = {
       live: true,

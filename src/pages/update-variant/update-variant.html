@@ -13,7 +13,7 @@
 <ion-content padding>
   <form [formGroup]="variantForm">
     <ion-item>
-      <ion-label floating>Content</ion-label>
+      <ion-label stacked>Content<span>*</span></ion-label>
       <ion-input formControlName="content" type="text"></ion-input>
     </ion-item>
     <div *ngIf="formErrors.content">
@@ -22,8 +22,9 @@
       </div>
     </div>
     <ion-item>
-      <ion-label floating>Size</ion-label>
+      <ion-label floating>Size<span>*</span></ion-label>
       <ion-input formControlName="size" type="number"></ion-input>
+      <p item-right>gms</p> 
     </ion-item>
     <div *ngIf="formErrors.size">
       <div style="text-align:center" *ngFor="let errors of formErrors.size">
@@ -31,8 +32,9 @@
       </div>
     </div>
     <ion-item>
-      <ion-label floating>Sugar</ion-label>
+      <ion-label floating>Sugar<span>*</span></ion-label>
       <ion-input formControlName="sugar" type="number"></ion-input>
+      <p item-right>gms</p>
     </ion-item>
     <div *ngIf="formErrors.sugar">
       <div style="text-align:center" *ngFor="let errors of formErrors.sugar">
@@ -40,8 +42,9 @@
       </div>
     </div>
     <ion-item>
-      <ion-label floating>Saturated Fat</ion-label>
+      <ion-label floating>Saturated Fat<span>*</span></ion-label>
       <ion-input formControlName="saturated_fat" type="number"></ion-input>
+      <p item-right>gms</p> 
     </ion-item>
     <div *ngIf="formErrors.saturated_fat">
       <div style="text-align:center" *ngFor="let errors of formErrors.saturated_fat">
@@ -49,8 +52,9 @@
       </div>
     </div>
     <ion-item>
-      <ion-label floating>Trans Fatty Acid</ion-label>
+      <ion-label floating>Trans Fatty Acid<span>*</span></ion-label>
       <ion-input formControlName="trans_fatty_acid" type="number"></ion-input>
+      <p item-right>gms</p> 
     </ion-item>
     <div *ngIf="formErrors.trans_fatty_acid">
       <div style="text-align:center" *ngFor="let errors of formErrors.trans_fatty_acid">
@@ -60,6 +64,7 @@
     <ion-item>
       <ion-label floating>Sodium</ion-label>
       <ion-input formControlName="sodium" type="number"></ion-input>
+      <p item-right>mg</p> 
     </ion-item>
     <div *ngIf="formErrors.sodium">
       <div style="text-align:center" *ngFor="let errors of formErrors.sodium">

@@ -13,7 +13,6 @@
 
 <ion-content padding>
   <h4>Brand: {{product?.brand}}</h4>
-  <h4>Variants: </h4>
   <ion-row>
     <ion-col></ion-col>
     <ion-col col-6>
@@ -21,15 +20,20 @@
     </ion-col>
     <ion-col></ion-col>
   </ion-row>
+  <h4>Variants: </h4>
   <ion-list>
     <ion-item-sliding *ngFor="let variant of variants">
       <button ion-item (click)="viewVariant(variant)">
           {{variant.content}}
       </button>
       <ion-item-options side="left">
-        <button ion-button color="dark" (click)="updateVariant(variant)" round>
+        <button ion-button color="primary" (click)="updateVariant(variant)" round>
           <ion-icon name="sync"></ion-icon>
           Update
+        </button>
+        <button ion-button color="danger" (click)="deleteVariant(variant)" round>
+          <ion-icon name="sync"></ion-icon>
+          Delete
         </button>
       </ion-item-options>
     </ion-item-sliding>

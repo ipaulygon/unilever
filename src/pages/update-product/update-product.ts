@@ -63,7 +63,6 @@ export class UpdateProductPage {
   save(){
     // Generate computed fields
     if(this.productForm.valid){
-      this.productForm.value._id = this.productForm.value.product.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
       this.productForm.value.dateUpdated = new Date().toISOString();
       this.productService.addProduct(this.productForm.value);
       this.navCtrl.pop();

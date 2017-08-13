@@ -12,30 +12,69 @@
 
 
 <ion-content padding>
-  <ion-card>
-    <ion-item>
+  <!-- SERVING -->
+  <ion-card style="border-color:black!important">
+    <ion-card-content class="bold">
       Serving Size: {{variant?.size}} g.
-    </ion-item>
-    <ion-item>
-      Sugar: {{variant?.sugar}} g. 
-      <span *ngIf="variant?.sugar<10" style="color:green">Good</span>
-      <span *ngIf="variant?.sugar>=10 && variant?.sugar<=20" style="color:orange">Warning</span>
-      <span *ngIf="variant?.sugar>20" style="color:red">Danger</span>
-    </ion-item>
-    <ion-item>
-      Saturated Fat: {{variant?.saturated_fat}} g.
-      <span *ngIf="variant?.saturated_fat<3" style="color:green">Good</span>
-      <span *ngIf="variant?.saturated_fat>=3 && variant?.saturated_fat<=5" style="color:orange">Warning</span>
-      <span *ngIf="variant?.saturated_fat>5" style="color:red">Danger</span>
-    </ion-item>
-    <ion-item>
-      Trans Fatty Acid: {{variant?.trans_fatty_acid}} g.
-    </ion-item>
-    <ion-item>
-      Sodium: {{variant?.sodium}} mg.
-      <span *ngIf="variant?.sodium<120" style="color:green">Good</span>
-      <span *ngIf="variant?.sodium>=120 && variant?.sodium<=200" style="color:orange">Warning</span>
-      <span *ngIf="variant?.sodium>200" style="color:red">Danger</span>
-    </ion-item>
+    </ion-card-content>
   </ion-card>
+  <!-- END OF SERVING -->
+  <!-- SUGAR -->
+  <ion-card *ngIf="variant?.sugar<=10" style="background-color:green;color:white">
+    <ion-card-content class="bold">
+      Sugar: {{variant?.sugar}} g.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.sugar>=10 && variant?.sugar<=20" style="background-color:orange;color:white">
+    <ion-card-content class="bold">
+      Sugar: {{variant?.sugar}} g.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.sugar>20" style="background-color:red;color:white">
+    <ion-card-content class="bold">
+      Sugar: {{variant?.sugar}} g.
+    </ion-card-content>
+  </ion-card>
+  <!-- END OF SUGAR -->
+  <!-- SATURATED FAT -->
+  <ion-card *ngIf="variant?.saturated_fat<3" style="background-color:green;color:white">
+    <ion-card-content class="bold">
+      Saturated Fat: {{variant?.saturated_fat}} g.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.saturated_fat>=3 && variant?.saturated_fat<=5" style="background-color:orange;color:white">
+    <ion-card-content class="bold">
+      Saturated Fat: {{variant?.saturated_fat}} g.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.saturated_fat>5" style="background-color:red;color:white">
+    <ion-card-content class="bold">
+      Saturated Fat: {{variant?.saturated_fat}} g.
+    </ion-card-content>
+  </ion-card>
+  <!-- END OF SATURATED FAT -->
+  <!-- TRANS FATTY ACID -->
+  <ion-card style="border-color:black!important">
+    <ion-card-content class="bold">
+      Trans Fatty Acid: {{variant?.trans_fatty_acid}} g.
+    </ion-card-content>
+  </ion-card>
+  <!-- END OF TRANS FATTY ACID -->
+  <!-- SODIUM -->
+  <ion-card *ngIf="variant?.sodium<120" style="background-color:green;color:white">
+    <ion-card-content class="bold">
+      Sodium: {{variant?.sodium}} mg.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.sodium>=120 && variant?.sodium<=200" style="background-color:orange;color:white">
+    <ion-card-content class="bold">
+      Sodium: {{variant?.sodium}} mg.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="variant?.sodium>200" style="background-color:red;color:white">
+    <ion-card-content class="bold">
+      Sodium: {{variant?.sodium}} mg.
+    </ion-card-content>
+  </ion-card>
+  <!-- END OF SODIUM -->
 </ion-content>
