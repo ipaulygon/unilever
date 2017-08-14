@@ -18,7 +18,7 @@
       <ion-input formControlName="brand" type="text"></ion-input>
     </ion-item>
     <div *ngIf="formErrors.brand">
-      <div style="text-align:center" *ngFor="let errors of formErrors.brand">
+      <div *ngFor="let errors of formErrors.brand">
         <p style="color: #C33825;font-style:italic;">{{errors}}<p>
       </div>
     </div>
@@ -27,7 +27,7 @@
       <ion-input formControlName="product" type="text"></ion-input>
     </ion-item>
     <div *ngIf="formErrors.product">
-      <div style="text-align:center" *ngFor="let errors of formErrors.product">
+      <div *ngFor="let errors of formErrors.product">
         <p style="color: #C33825;font-style:italic;">{{errors}}<p>
       </div>
     </div>

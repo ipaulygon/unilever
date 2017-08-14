@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Home</ion-title>
+    <ion-title>School Certification</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,6 +9,14 @@
     <button (click)="pushAddProductPage()" ion-fab mini outline color="primary"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item-sliding *ngFor="let product of items">
       <button ion-item (click)="viewProduct(product)">

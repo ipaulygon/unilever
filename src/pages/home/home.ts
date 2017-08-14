@@ -18,6 +18,13 @@ export class HomePage {
     this.init();
   }
 
+  doRefresh(refresher) {
+    this.init();
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000);
+  }
+
   init(){
     this.productsService.getProducts().subscribe((products) => {
         this.products = products;
